@@ -14,4 +14,11 @@
         android:title="@string/action_next"
         android:icon="@drawable/ic_chevron_right_black_48dp"
         app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_tabsWithLibrary"
+        android:orderInCategory="300"
+        android:title="@string/action_tabsWithLibrary"
+        app:showAsAction="never" />
+
 </menu>

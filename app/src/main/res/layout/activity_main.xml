@@ -6,15 +6,27 @@
     android:id="@+id/drawerLayout"
     tools:context=".MainActivity">
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <!--android:fitsSystemWindows="true"-->
 
         <include
             android:id="@+id/app_bar"
             layout="@layout/app_bar" />
+
+        <com.materialdesign.pana.allan.materialdesign_101.tabs.SlidingTabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -22,7 +34,7 @@
             android:layout_below="@+id/app_bar"
             android:text="@string/hello_world" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
     <fragment
         android:id="@+id/fragment_navigation_drawer"

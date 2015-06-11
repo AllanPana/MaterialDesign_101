@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.materialdesign.pana.allan.materialdesign_101" >
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,7 +20,13 @@
         <activity
             android:name=".SubActivity"
             android:label="@string/title_activity_sub" >
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity"/>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".tabWithLibrary.TabsWithLibraryActivity"
+            android:label="@string/title_activity_tabs_with_library" >
         </activity>
     </application>
 
