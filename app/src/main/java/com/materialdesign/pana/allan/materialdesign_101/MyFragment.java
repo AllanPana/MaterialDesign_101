@@ -14,6 +14,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.materialdesign.pana.allan.materialdesign_101.network.VolleySingleton;
 import com.materialdesign.pana.allan.materialdesign_101.util.CustomTagNToast;
 
 /**
@@ -39,7 +40,7 @@ public class MyFragment extends Fragment {
         if(bundle!=null){
             textView.setText("The page selected is"+bundle.getInt("position"));
         }
-        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+        RequestQueue requestQueue = VolleySingleton.getInstance().getRequestQueue();
         StringRequest stringRequest = new StringRequest(Request.Method.GET,
                 "http://tpbookserver.herokuapp.com/book/300",
                 new Response.Listener<String>() {
@@ -57,7 +58,7 @@ public class MyFragment extends Fragment {
                     }
                 });
 
-        requestQueue.add(stringRequest);
+        VolleySingleton.getInstance().addToRequestQueue(stringRequest);
         return view;
     }
 }
