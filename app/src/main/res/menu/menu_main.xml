@@ -21,4 +21,12 @@
         android:title="@string/action_tabsWithLibrary"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/action_vectorTestActivity"
+        android:orderInCategory="400"
+        android:title="@string/action_vectorTestActivity"
+        app:showAsAction="never" />
+
+
+
 </menu>

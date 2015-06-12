@@ -1,4 +1,4 @@
-package com.materialdesign.pana.allan.materialdesign_101;
+package com.materialdesign.pana.allan.materialdesign_101.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.materialdesign.pana.allan.materialdesign_101.R;
+import com.materialdesign.pana.allan.materialdesign_101.model.Information;
 
 import java.util.Collections;
 import java.util.List;
@@ -21,7 +24,7 @@ public class MyRecycleViewAdapter extends RecyclerView.Adapter<MyRecycleViewAdap
     private Context context;
     private  MyItemClickListener myItemClickListener;
 
-    MyRecycleViewAdapter(Context context,List<Information> data ){
+    public MyRecycleViewAdapter(Context context,List<Information> data ){
         this.context = context;
         inflater=LayoutInflater.from(context);
         this.data = data;

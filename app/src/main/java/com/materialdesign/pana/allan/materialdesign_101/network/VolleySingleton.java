@@ -7,7 +7,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
-import com.materialdesign.pana.allan.materialdesign_101.MyApplication;
+import com.materialdesign.pana.allan.materialdesign_101.util.MyApplication;
 
 /**
  * Created by allan on 11/06/15.

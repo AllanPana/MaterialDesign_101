@@ -1,4 +1,4 @@
-package com.materialdesign.pana.allan.materialdesign_101;
+package com.materialdesign.pana.allan.materialdesign_101.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,7 +13,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
+import com.materialdesign.pana.allan.materialdesign_101.R;
 import com.materialdesign.pana.allan.materialdesign_101.network.VolleySingleton;
 import com.materialdesign.pana.allan.materialdesign_101.util.CustomTagNToast;
 
@@ -47,14 +47,14 @@ public class MyFragment extends Fragment {
                     @Override
                     public void onResponse(String s) {
 
-                        CustomTagNToast.setToast(getActivity(),s.toString());
+                       // CustomTagNToast.setToast(getActivity(),s.toString());
                         CustomTagNToast.setLog(s);
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
-                        CustomTagNToast.setToast(getActivity(),volleyError.toString());
+                        //CustomTagNToast.setToast(getActivity(),volleyError.toString());
                     }
                 });
 

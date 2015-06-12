@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/highLightColor"
-    tools:context="com.materialdesign.pana.allan.materialdesign_101.NavigationDrawerFragment">
+    tools:context="com.materialdesign.pana.allan.materialdesign_101.fragments.NavigationDrawerFragment">
 
     <LinearLayout
         android:id="@+id/ll_containerLayout"

@@ -1,10 +1,9 @@
-package com.materialdesign.pana.allan.materialdesign_101;
+package com.materialdesign.pana.allan.materialdesign_101.fragments;
 
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
@@ -16,8 +15,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.materialdesign.pana.allan.materialdesign_101.adapters.MyRecycleViewAdapter;
+import com.materialdesign.pana.allan.materialdesign_101.R;
+import com.materialdesign.pana.allan.materialdesign_101.activities.SubActivity;
+import com.materialdesign.pana.allan.materialdesign_101.model.Information;
 import com.materialdesign.pana.allan.materialdesign_101.util.CustomTagNToast;
 
 import java.util.ArrayList;
@@ -27,7 +29,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NavigationDrawerFragment extends Fragment implements MyRecycleViewAdapter.MyItemClickListener{
+public class NavigationDrawerFragment extends Fragment implements MyRecycleViewAdapter.MyItemClickListener {
 
     private static final String PREF_FILE_NAME = "testpref";
     private static final String KEY_USER_LEARNED_DAWER = "user_learned_drawer";

@@ -1,36 +1,38 @@
-package com.materialdesign.pana.allan.materialdesign_101;
+package com.materialdesign.pana.allan.materialdesign_101.activities;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ImageSpan;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.materialdesign.pana.allan.materialdesign_101.fragments.FragmentBoxOffice;
+import com.materialdesign.pana.allan.materialdesign_101.fragments.FragmentSearch;
+import com.materialdesign.pana.allan.materialdesign_101.fragments.FragmentUpComing;
+import com.materialdesign.pana.allan.materialdesign_101.fragments.NavigationDrawerFragment;
+import com.materialdesign.pana.allan.materialdesign_101.R;
 import com.materialdesign.pana.allan.materialdesign_101.tabWithLibrary.TabsWithLibraryActivity;
 import com.materialdesign.pana.allan.materialdesign_101.tabs.SlidingTabLayout;
 
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final int MOVIES_SEARCH = 0;
+    private static final int MOVIES_UPCOMING = 1;
+    private static final int MOVIES_BOX_OFFICE = 2;
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private SlidingTabLayout mTabs;
@@ -95,6 +97,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
+        if (id == R.id.action_vectorTestActivity) {
+            Intent intent = new Intent(this, VectorTestActivity.class);
+            startActivity(intent);
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -106,9 +113,12 @@ public class MainActivity extends AppCompatActivity {
     class MyPagerAdapter extends FragmentStatePagerAdapter {
 
         String []tabs;
-        int [] tabIcons = {R.mipmap.ic_account_box_black_18dp,
+        /*int [] tabIcons = {R.mipmap.ic_account_box_black_18dp,
                            R.mipmap.ic_accessibility_black_18dp,
-                           R.mipmap.ic_add_shopping_cart_black_18dp};
+                           R.mipmap.ic_add_shopping_cart_black_18dp};*/
+        int [] tabIcons = {R.drawable.vectorized_android,
+                R.drawable.vectorized_android,
+                R.drawable.vectorized_android};
         public MyPagerAdapter(FragmentManager fm) {
             super(fm);
             tabs = getResources().getStringArray(R.array.tabs);
@@ -116,8 +126,21 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            MyFragment myFragment = MyFragment.getInstance(position);
-            return myFragment;
+
+            Fragment fragment = null;
+            switch (position){
+                case MOVIES_SEARCH:
+                    fragment = FragmentSearch.newInstance("","");
+                    break;
+                case MOVIES_UPCOMING:
+                    fragment = FragmentUpComing.newInstance("","");
+                    break;
+                case MOVIES_BOX_OFFICE:
+                    fragment = FragmentBoxOffice.newInstance("","");
+                    break;
+            }
+
+            return fragment;
         }
 
         @Override

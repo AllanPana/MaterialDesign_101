@@ -10,7 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.materialdesign.pana.allan.materialdesign_101.MyFragment;
+import com.materialdesign.pana.allan.materialdesign_101.fragments.MyFragment;
 import com.materialdesign.pana.allan.materialdesign_101.R;
 
 import it.neokree.materialtabs.MaterialTab;

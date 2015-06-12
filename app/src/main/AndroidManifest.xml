@@ -2,14 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.materialdesign.pana.allan.materialdesign_101" >
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".util.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,15 +20,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SubActivity"
+            android:name=".activities.SubActivity"
             android:label="@string/title_activity_sub" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".activities.MainActivity" />
         </activity>
         <activity
             android:name=".tabWithLibrary.TabsWithLibraryActivity"
             android:label="@string/title_activity_tabs_with_library" >
+        </activity>
+        <activity
+            android:name=".activities.VectorTestActivity"
+            android:label="@string/title_activity_vector_test" >
+        </activity>
+        <activity
+            android:name=".tapadooBooks.BookMainActivity"
+            android:label="@string/title_activity_book_main" >
         </activity>
     </application>
 

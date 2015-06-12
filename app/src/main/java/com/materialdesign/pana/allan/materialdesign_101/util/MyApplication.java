@@ -1,4 +1,4 @@
-package com.materialdesign.pana.allan.materialdesign_101;
+package com.materialdesign.pana.allan.materialdesign_101.util;
 
 import android.app.Application;
 import android.content.Context;
@@ -8,6 +8,7 @@ import android.content.Context;
  */
 public class MyApplication extends Application{
 
+    public static final String RT_API_KEY = "54wzfswsa4qmjg8hjwa64d4c&q";
     private static MyApplication myApplicationInstance;
 
     @Override
